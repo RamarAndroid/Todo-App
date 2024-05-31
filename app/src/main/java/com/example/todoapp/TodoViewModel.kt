@@ -9,6 +9,9 @@ class TodoViewModel : ViewModel() {
     private var _todoList = MutableLiveData<List<Todo>>()
     val todoList : LiveData<List<Todo>> = _todoList
 
+    init {
+        getAllTodo()
+    }
     fun getAllTodo(){
         _todoList.value = TodoManager.getAllTodo().reversed()
     }
